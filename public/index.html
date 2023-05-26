@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Station</title>
+    <script
+      src="https://kit.fontawesome.com/9f5ff7bf8b.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        background-color: lightblue;
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .temperature {
+        font-size: 6rem;
+      }
+
+      .humidity-wind {
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .humidity-wind > div {
+        margin: 0 1rem;
+      }
+
+      .humidity-wind i {
+        margin-right: 0.5rem;
+      }
+
+      .update-section {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #update-btn {
+        background-color: #1c87b2;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      #update-btn:hover {
+        background-color: #1a6a91;
+      }
+
+      #last-updated {
+        font-size: 1.2rem;
+        margin-top: 10px;
+      }
+      .spinner {
+        display: none;
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border-top-color: rgb(255, 255, 255);
+        animation: spin 1s linear infinite;
+        align-self: center;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="temperature" id="temperature">25°C</div>
+      <div class="humidity-wind">
+        <i class="fas fa-tint"></i>
+        <div class="humidity" id="humidity">60%</div>
+        <i class="fas fa-wind"></i>
+        <div class="wind-speed" id="wind-speed">5 km/h</div>
+      </div>
+      <div class="update-section">
+        <button id="update-btn">Update Weather Data</button>
+        <p id="last-updated">Last updated: N/A</p>
+        <div class="spinner" id="spinner"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
